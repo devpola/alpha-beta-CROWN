@@ -27,6 +27,23 @@ from torchvision import datasets
 import arguments
 
 
+def fashion_mnist_model(in_channel, out_dim):
+    """Convolutional model for Fashion MNIST."""
+    model = nn.Sequential(
+        nn.Conv2d(1, 16, 3, stride=1, padding=1),
+        nn.ReLU(),
+        nn.MaxPool2d(2),
+        nn.Conv2d(16, 32, 3, stride=1, padding=1),
+        nn.ReLU(),
+        nn.MaxPool2d(2),
+        nn.Flatten(),
+        nn.Linear(32 * 7 * 7, 128),  # FC Layer
+        nn.ReLU(),
+        nn.Linear(128, 10)          # Output Layer
+    )
+    return model
+
+
 def simple_conv_model(in_channel, out_dim):
     """Simple Convolutional model."""
     model = nn.Sequential(

@@ -106,6 +106,8 @@ def load_dataset():
         loader = datasets.CIFAR10
     elif arguments.Config["data"]["dataset"] == 'CIFAR100':
         loader = datasets.CIFAR100
+    elif arguments.Config["data"]["dataset"] == 'Fashion_MNIST':
+        loader = datasets.FashionMNIST
     else:
         raise ValueError("Dataset {} not supported.".format(arguments.Config["data"]["dataset"]))
     test_data = loader(database_path, train=False, download=True,

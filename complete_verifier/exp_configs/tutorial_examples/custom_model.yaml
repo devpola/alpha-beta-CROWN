@@ -1,15 +1,17 @@
 # This is an example configuration file that contains most useful parameter settings.
+general:
+  device: cpu
 model:
   # Model is defined as simple_conv_model() in custom_model_data.py. The function simple_conv_model() will be called with arguments in_channel=3, out_dim=10.
   name: Customized("custom_model_data", "simple_conv_model", in_channel=3, out_dim=10)
   # Path to model checkpoint.
-  path: models/eran/cifar_conv_small_pgd.pth
+  path: alpha-beta-CROWN/complete_verifier/models/eran/cifar_conv_small_pgd.pth
 data:
   dataset: CIFAR  # Dataset name. This is just the standard CIFAR-10 test set defined in the "load_verification_dataset()" function in utils.py
   mean: [0.4914, 0.4822, 0.4465]  # Mean for normalization.
   std: [0.2471, 0.2435, 0.2616]  # Std for normalization.
   start: 0  # First example to verify in dataset.
-  end: 100  # Last example to verify in dataset. We verify 100 examples in this test.
+  end: 1  # Last example to verify in dataset. We verify 100 examples in this test.
 specification:
   norm: .inf  # Linf norm (can also be 2 or 1).
   epsilon: 0.00784313725490196  # epsilon=2./255.
