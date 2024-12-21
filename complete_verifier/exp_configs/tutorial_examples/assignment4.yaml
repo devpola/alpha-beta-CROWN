@@ -6,7 +6,7 @@ model:
   # Custom model defined as fashion_mnist_model() in custom_model_data.py.
   name: Customized("custom_model_data", "fashion_mnist_model", in_channel=1, out_dim=10)
   # Path to the pretrained model checkpoint.
-  path: alpha-beta-CROWN/assignment4/fashion_mnist_model.pth
+  path: alpha-beta-CROWN/complete_verifier/assignment4/fashion_mnist_model.pth
 
 data:
   dataset: FashionMNIST  # Dataset name.
