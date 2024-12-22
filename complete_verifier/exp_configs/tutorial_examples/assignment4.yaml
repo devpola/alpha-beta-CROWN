@@ -9,7 +9,7 @@ model:
   path: alpha-beta-CROWN/complete_verifier/assignment4/fashion_mnist_model.pth
 
 data:
-  dataset: FashionMNIST  # Dataset name.
+  dataset: Fashion_MNIST  # Dataset name.
   mean: [0.286]  # Mean for normalization.
   std: [0.353]   # Std for normalization.
   start: 0  # First example to verify in dataset.
